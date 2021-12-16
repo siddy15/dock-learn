@@ -19,6 +19,7 @@ pipeline {
         }
         stage('Building the docker image') {
             steps {
+                cd 'cd $FOLDER_PATH'
                 sh 'docker build -t python-app2'
             }
         }

@@ -17,6 +17,15 @@ pipeline {
                 sh 'docker image ls'
             }
         }
-
+        stage('Building the docker image') {
+            steps {
+                sh 'docker build -t python-app2'
+            }
+        }
+        stage('Running the docker container') {
+            steps {
+                sh 'docker run python-app2'
+            }
+        }
     }
 }
